@@ -1,0 +1,20 @@
+//https://leetcode.com/problems/two-sum/
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var twoSum = function (nums, target) {
+    let currentIndex = 0;
+    let output = [];
+    do {
+        for (let index = 0; index < nums.length; index++) {
+            if (currentIndex != index && nums[index] + nums[currentIndex] == target) {
+                output = [currentIndex, index]
+                currentIndex = nums.length
+            }
+        }
+        currentIndex++
+    } while (currentIndex < nums.length);
+    return output;
+};
